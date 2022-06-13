@@ -3,7 +3,7 @@ function ImageGalleryItem({images}){
         <>
         {images.map(image => (
             <li class="gallery-item" key={image.id}>
-            <img src={image.webformatURL} alt="" />
+            <img width='100' src={image.webformatURL} alt="" />
           </li>))}
          
           </>
