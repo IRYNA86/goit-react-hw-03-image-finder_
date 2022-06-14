@@ -1,9 +1,9 @@
 import ImageGalleryItem from '../ImageGallery/ImageGalleryItem'
 
-function ImageGallery({images}){
+function ImageGallery({images, nameImages}){
     return (
         <ul class="gallery">
-        <ImageGalleryItem images={images}/>
+        <ImageGalleryItem images={images} nameImages={nameImages}/>
 </ul> 
     )
 }
