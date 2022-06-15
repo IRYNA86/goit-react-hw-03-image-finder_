@@ -44,7 +44,7 @@ async componentDidMount(nameImages) {
     this.setState({ isLoading: true });
     try {
       const response = await axios.get(
-        `/?key=4823621-792051e21e56534e6ae2e472f&q=${nameImages}&page=1&per_page=3`
+        '/?key=4823621-792051e21e56534e6ae2e472f&q=cat&page=1&per_page=3'
       );
       this.setState({ images: response.data.hits });
     } catch (error) {
@@ -54,16 +54,16 @@ async componentDidMount(nameImages) {
     }
   }
 
-  componentDidUpdate(prevProps, prevState){
-    if(prevState.nameImages !== this.state.nameImages){
-      fetch(
-        `/?key=4823621-792051e21e56534e6ae2e472f&q=${this.state.nameImages}&page=1&per_page=3`
-      )
-      console.log('prevState.nameImages:', prevState.nameImages)
-      console.log('this.state.nameImages:', this.state.nameImages)
-      console.log('заменилось')
-    }
-  }
+  // componentDidUpdate(prevProps, prevState){
+  //   if(prevState.nameImages !== this.state.nameImages){
+  //     fetch(
+  //       `/?key=4823621-792051e21e56534e6ae2e472f&q=${this.state.nameImages}&page=1&per_page=3`
+  //     )
+  //     console.log('prevState.nameImages:', prevState.nameImages)
+  //     console.log('this.state.nameImages:', this.state.nameImages)
+  //     console.log('заменилось')
+  //   }
+  // }
 
   handleFormSubmit = nameImages => {
     this.setState({nameImages})
