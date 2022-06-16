@@ -1,8 +1,8 @@
-function ImageGalleryItem({images}){
+function ImageGalleryItem({images, onClick}){
     return(
         <>
         {images.map(image => (
-            <li class="gallery-item" key={image.id}  >
+            <li class="gallery-item" key={image.id} onClick={() => onClick(image.largeImageURL)}>
             <img width='100' src={image.webformatURL} alt="" />
           </li>))}
          

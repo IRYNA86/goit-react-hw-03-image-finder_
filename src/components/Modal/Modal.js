@@ -1,14 +1,32 @@
-import s from '../Modal/Modal.module.css'
+import { Component } from 'react';
+import s from '../Modal/Modal.module.css';
 
-function Modal({ images }) {
-  return (
-    <div className={s.overlay}>
-      {images.map(image => (
-        <div className={s.modal} key={image.id}>
-          <img src={image.largeImageURL} alt="" />
-        </div>
-      ))}
-    </div>
-  );
+class Modal extends Component {
+
+  componentDidMount() {
+    window.addEventListener('keydown', this.handleKeyDown)
+  }
+
+  handleKeyDown = event => {
+    if (event.code === 'Escape') {
+      this.props.onClose();
+    }
+  };
+
+  handleBackdropClick = event => {
+    if (event.currentTarget === event.target) {
+      this.props.onClose();
+    }
+  };
+  render() {
+    return (
+      <div className={s.overlay} onClick={this.handleBackdropClick}>
+        <div className={s.modal}>{this.props.children}</div>
+      </div>
+    );
+  }
 }
+
 export default Modal;
+
+

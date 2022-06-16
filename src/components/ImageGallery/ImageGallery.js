@@ -1,9 +1,9 @@
 import ImageGalleryItem from '../ImageGallery/ImageGalleryItem'
 
-function ImageGallery({images, nameImages, toggleModal, id}){
+function ImageGallery({images, nameImages, onClick}){
     return (
         <ul class="gallery">
-        <ImageGalleryItem images={images} nameImages={nameImages} onClick={() => toggleModal(id)}/>
+        <ImageGalleryItem images={images} nameImages={nameImages}  onClick={onClick}/>
 </ul> 
     )
 }
