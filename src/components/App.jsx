@@ -4,9 +4,10 @@ import Searchbar from './Searchbar/Searchbar';
 import ImageGallery from './ImageGallery/ImageGallery';
 import axios from 'axios';
 import mapper from '../service/mapper.js'
+import Modal from './Modal/Modal';
 
 
-const API_KEY = '25251210-ac1999c1ffdbc1fb6fbdee37e';
+const API_KEY = '25360661-9d832ca480fd7eb90334f4453';
 
 axios.defaults.baseURL = 'https://pixabay.com/api';
 
@@ -18,6 +19,8 @@ class App extends Component {
     nameImages: '',
     isLoading: false,
     error: null,
+    showModal: false,
+    
   };
 
   async componentDidMount() {
@@ -60,9 +63,17 @@ class App extends Component {
       page: 1,
       nameImages: queryValue, });
   };
+toggleModal = () => 
+{
+  this.setState(
+    state => ({
+      showModal: !state.showModal,
+    })
+  )
+}
 
   render() {
-    const { images, isLoading, error, nameImages } = this.state;
+    const { images, isLoading, error, nameImages, showModal } = this.state;
     console.log(images)
     return (
       <div>
@@ -71,9 +82,11 @@ class App extends Component {
         {isLoading ? (
           <p>Loading...</p>
         ) : (
-          <ImageGallery images={images} nameImages={nameImages} />
+          <ImageGallery images={images} nameImages={nameImages} toggleModal={this.toggleModal} />
         )}
         <ToastContainer position="top-right" autoClose={3000} />
+        {showModal && <Modal images={images} />}
+        
       </div>
     );
   }
