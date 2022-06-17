@@ -1,0 +1,11 @@
+.hello {
+    font-size: 30px;
+    text-align: center;
+    word-spacing: 10px;
+    letter-spacing: 5px;
+    color: brown;
+}
+.isLoadingCircles {
+    display: flex;
+    justify-content: center;
+}

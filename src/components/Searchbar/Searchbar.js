@@ -23,10 +23,10 @@ class Searchbar extends Component {
 
   render() {
     return (
-      <header className={s.searchForm}>
+      <header className={s.header}>
         <form className={s.searchForm} onSubmit={this.handleSubmit}>
           <button type="submit" className={s.searchForm_button}>
-            <span class="button-label">Search</span>
+            <span className={s.buttonLabel}>Search</span>
           </button>
           
           <input
@@ -40,7 +40,7 @@ class Searchbar extends Component {
           />
           
         </form>
-      </header>
+        </header>
     );
   }
 }
