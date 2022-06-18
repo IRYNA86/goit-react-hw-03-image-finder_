@@ -1,10 +1,18 @@
-import s from '../Button/Button.module.css'
+import PropTypes from 'prop-types';
+import s from '../Button/Button.module.css';
 
-function Button({nextPage}){
-    return(
-        <div className={s.buttonDiv}>
-        <button className={s.button} type="button" onClick={nextPage}>Load more</button>
-        </div>
-    )
+function Button({ nextPage }) {
+  return (
+    <div className={s.buttonDiv}>
+      <button className={s.button} type="button" onClick={nextPage}>
+        Load more
+      </button>
+    </div>
+  );
 }
-export default Button
+
+Button.propTypes = {
+  nextPage: PropTypes.func,
+};
+
+export default Button;

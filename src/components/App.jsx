@@ -3,12 +3,11 @@ import { animateScroll as scroll } from 'react-scroll';
 import { ToastContainer } from 'react-toastify';
 import { toast } from 'react-toastify';
 import Searchbar from './Searchbar/Searchbar';
+import Loader from './Loader/Loader';
 import ImageGallery from './ImageGallery/ImageGallery';
 import mapper from '../service/mapper.js';
 import Modal from './Modal/Modal';
 import Button from './Button/Button';
-import 'react-loader-spinner/dist/loader/css/react-spinner-loader.css';
-import { Circles } from 'react-loader-spinner';
 import * as api from '../service/api';
 import s from '../components/App.module.css'
 
@@ -102,14 +101,7 @@ class App extends Component {
         {images.length === 0 && <p className={s.hello}> You can find new picture</p>}
         {error && <p className={s.hello}>Whoops, something went wrong: {error.message}</p>}
         {isLoading ? (
-          <>
-            <Circles className={s.isLoadingCircles}
-              color="#00BFFF"
-              height={80}
-              width={80}
-              ariaLabel="loading"
-            />
-          </>
+         <Loader/>
         ) : (
           <ImageGallery
             images={images}

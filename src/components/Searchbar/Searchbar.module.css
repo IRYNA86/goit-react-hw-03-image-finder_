@@ -52,7 +52,7 @@
     display: inline-block;
     width: 100%;
     font: inherit;
-    font-size: 17px;
+    font-size: 15px;
     border: solid 1px rgb(151, 130, 12);
     outline: none;
     padding: 5px;
@@ -61,7 +61,7 @@
   
   .searchForm_input::placeholder {
     font: inherit;
-    font-size: 18px;
+    font-size: 15px;
     color: brown;
   }
   
